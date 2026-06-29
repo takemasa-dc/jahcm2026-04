@@ -113,6 +113,19 @@ export async function createSubmission(input: {
   return rows[0];
 }
 
+export async function getLatestVisibleSubmissionByGroup(groupNumber: number) {
+  await ensureTables();
+  const rows = await sql()<Submission[]>`
+    select *
+    from submissions
+    where group_number = ${groupNumber}
+      and is_hidden = false
+    order by created_at desc
+    limit 1
+  `;
+  return rows[0] || null;
+}
+
 export async function createComment(input: {
   submissionId: string;
   commenterName: string;

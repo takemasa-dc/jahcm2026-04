@@ -14,6 +14,7 @@ import {
   createSubmission,
   deleteComment,
   deleteSubmission,
+  getLatestVisibleSubmissionByGroup,
   setCommentHidden,
   setSubmissionHidden
 } from "@/lib/db";
@@ -70,7 +71,7 @@ export async function submitWork(formData: FormData) {
     throw new Error("JPEG，PNG，HEIC形式の画像を選択してください。");
   }
 
-  const imageUrls = await Promise.all(
+  let imageUrls = await Promise.all(
     images.map(async (image, index) => {
       const extension = image.name.split(".").pop()?.toLowerCase() || "jpg";
       const blob = await put(
@@ -84,6 +85,15 @@ export async function submitWork(formData: FormData) {
       return blob.url;
     })
   );
+
+  const previousSubmission = await getLatestVisibleSubmissionByGroup(groupNumber);
+  if (
+    imageUrls.length === 1 &&
+    previousSubmission &&
+    !previousSubmission.image_url_2
+  ) {
+    imageUrls = [previousSubmission.image_url, imageUrls[0]];
+  }
 
   await createSubmission({
     groupNumber,

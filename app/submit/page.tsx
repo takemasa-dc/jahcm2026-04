@@ -29,7 +29,9 @@ export default function SubmitPage() {
             </label>
             <label>
               成果物写真アップロード
-              <span className="hint">写真は2枚まで選択できます。</span>
+              <span className="hint">
+                写真は2枚まで選択できます。1枚ずつ追加する場合は，同じグループ番号で再度送信してください。
+              </span>
               <input
                 name="images"
                 type="file"
