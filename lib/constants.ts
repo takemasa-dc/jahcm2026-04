@@ -40,4 +40,6 @@ export const PROFESSION_HELP =
   "現在の主な職種・立場を選択してください。複数に該当する場合は，今回の退院支援カンファレンスで主に発言する立場に最も近いものを選択してください。";
 export const SUBMIT_NOTICE =
   "提出写真に個人名・所属名などの個人情報を含めないでください。";
+export const BOARD_VIEW_NOTICE =
+  "このページは2026年7月31日まで閲覧できます。";
 export const CLOSED_MESSAGE = "この共有ボードの閲覧期間は終了しました。";

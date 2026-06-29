@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CommentForm } from "@/components/CommentForm";
 import { ImageDialog } from "@/components/ImageDialog";
 import { SiteHeader } from "@/components/SiteHeader";
-import { CLOSED_MESSAGE, GROUPS } from "@/lib/constants";
+import { BOARD_VIEW_NOTICE, CLOSED_MESSAGE, GROUPS } from "@/lib/constants";
 import { getBoardGroups } from "@/lib/db";
 import { isViewOpen } from "@/lib/view-window";
 
@@ -55,6 +55,7 @@ export default async function BoardPage() {
             <p className="eyebrow">閲覧・コメントページ</p>
             <h2>各グループの成果物</h2>
           </div>
+          <p className="notice">{BOARD_VIEW_NOTICE}</p>
           {submittedGroups.length > 0 ? (
             <div className="board-grid">
               {submittedGroups.map(({ groupNumber, submission, comments }) => {
