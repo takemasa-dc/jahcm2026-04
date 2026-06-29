@@ -55,7 +55,7 @@ export const vitals = [
     date: "2026/06/25",
     shortDate: "6/25",
     slots: [
-      { time: "18:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
+      { time: "10:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
       { time: "21:00", temperature: 38.5, bp: "136/76", systolic: 136, diastolic: 76, pulse: 106, respiration: 24, spo2: "94%", oxygen: "NC 1L" }
     ],
     meals: { morning: "0/0", noon: "2/2", evening: "2/1" }
