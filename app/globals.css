@@ -348,6 +348,256 @@ dialog::backdrop {
   gap: 18px;
 }
 
+.chart-page {
+  min-height: 100vh;
+  background: #eef3f5;
+  color: #1d2b34;
+  padding: 16px;
+}
+
+.chart-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.chart-program,
+.patient-header,
+.chart-section,
+.soap-note,
+.chart-link-card {
+  border: 1px solid #ccd8dd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(38, 55, 64, 0.08);
+}
+
+.chart-program {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-top: 5px solid #3e7cb1;
+}
+
+.chart-program h1 {
+  font-size: clamp(1.35rem, 4.5vw, 2.2rem);
+}
+
+.chart-alert {
+  border: 1px solid #dfcc83;
+  border-radius: 8px;
+  background: #fff8d9;
+  padding: 10px 12px;
+  color: #50431b;
+  font-weight: 700;
+}
+
+.patient-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0;
+  overflow: hidden;
+}
+
+.patient-field {
+  display: grid;
+  gap: 2px;
+  border-right: 1px solid #e0e8eb;
+  border-bottom: 1px solid #e0e8eb;
+  padding: 9px 11px;
+  min-width: 0;
+}
+
+.patient-field span,
+.kv-grid dt {
+  color: #5d6d75;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.patient-field strong,
+.kv-grid dd {
+  overflow-wrap: anywhere;
+}
+
+.chart-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chart-nav a {
+  border: 1px solid #cbd8dc;
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px 11px;
+  color: #264b63;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.chart-section {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.chart-section h2 {
+  border-bottom: 2px solid #dbe6e9;
+  padding-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.kv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid #e0e8eb;
+  border-left: 1px solid #e0e8eb;
+}
+
+.kv-grid div {
+  display: grid;
+  grid-template-columns: minmax(92px, 0.45fr) minmax(0, 1fr);
+  border-right: 1px solid #e0e8eb;
+  border-bottom: 1px solid #e0e8eb;
+}
+
+.kv-grid dt,
+.kv-grid dd {
+  margin: 0;
+  padding: 9px 10px;
+}
+
+.kv-grid dt {
+  background: #f4f7f8;
+}
+
+.chart-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.chart-link-card {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+}
+
+.chart-link-card strong {
+  color: #173f59;
+  font-size: 1.05rem;
+}
+
+.chart-link-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid #d8e2e5;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.chart-table th,
+.chart-table td {
+  border-bottom: 1px solid #e2eaed;
+  padding: 9px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.chart-table th {
+  background: #eaf1f4;
+  color: #273c48;
+  font-size: 0.82rem;
+}
+
+.chart-table tbody tr:nth-child(even) {
+  background: #f8fbfc;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chart-legend span,
+.chart-legend strong {
+  border-radius: 8px;
+  background: #eef5f4;
+  padding: 5px 9px;
+  font-size: 0.86rem;
+}
+
+.chart-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.record-stack,
+.record-fields {
+  display: grid;
+  gap: 14px;
+}
+
+.record-fields div {
+  display: grid;
+  gap: 5px;
+}
+
+.record-fields strong {
+  color: #254c63;
+}
+
+.soap-note {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.soap-note h3 {
+  border-bottom: 1px solid #dce6e9;
+  padding-bottom: 8px;
+}
+
+.soap-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.soap-row span {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #3e7cb1;
+  color: #fff;
+  font-weight: 900;
+}
+
+.chart-small-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -377,5 +627,20 @@ dialog::backdrop {
 
   .photo-strip {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .chart-page {
+    padding: 24px;
+  }
+
+  .chart-program {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding: 22px;
+  }
+
+  .chart-section,
+  .soap-note {
+    padding: 20px;
   }
 }

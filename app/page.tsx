@@ -24,6 +24,9 @@ export default function HomePage() {
             <Link className="ghost-button" href="/board">
               成果物を見る
             </Link>
+            <Link className="ghost-button" href="/chart">
+              架空カルテを見る
+            </Link>
           </div>
         </section>
       </div>
