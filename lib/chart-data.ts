@@ -158,6 +158,7 @@ export const vitals = [
 ] as const;
 
 export const nursingRemarks = [
+  { date: "2026/06/25", time: "10:00", body: "緊急入院。" },
   { date: "2026/06/25", time: "19:20", body: "38.2℃。咳嗽・喀痰あり。医師指示にて解熱鎮痛薬使用。" },
   { date: "2026/06/26", time: "06:40", body: "夜間，痰が絡む訴えあり。体位調整で軽快。" },
   { date: "2026/06/27", time: "21:10", body: "痰が絡む感じでナースコールあり。SpO2 95％。呼吸苦は軽度。" },
