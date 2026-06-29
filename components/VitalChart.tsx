@@ -34,6 +34,14 @@ function polyline(points: { x: number; y: number }[]) {
   return points.map((point) => `${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ");
 }
 
+function trianglePoints(x: number, y: number, direction: "up" | "down") {
+  const size = 5;
+  if (direction === "up") {
+    return `${x},${y - size} ${x - size},${y + size} ${x + size},${y + size}`;
+  }
+  return `${x},${y + size} ${x - size},${y - size} ${x + size},${y - size}`;
+}
+
 function observationText(day: VitalDay, key: "respiration" | "spo2" | "oxygen") {
   return day.slots.map((slot) => `${slot.time} ${slot[key]}`).join(" / ");
 }
@@ -107,10 +115,10 @@ export function VitalChart() {
               <circle key={`hr-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#286fb7" strokeWidth="2" />
             ))}
             {sysPoints.map((point) => (
-              <circle key={`sys-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#2d3438" strokeWidth="2" />
+              <polygon key={`sys-${point.slot.time}-${point.x}`} points={trianglePoints(point.x, point.y, "down")} fill="#fff" stroke="#2d3438" strokeWidth="2" strokeLinejoin="round" />
             ))}
             {diaPoints.map((point) => (
-              <circle key={`dia-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#65737b" strokeWidth="2" />
+              <polygon key={`dia-${point.slot.time}-${point.x}`} points={trianglePoints(point.x, point.y, "up")} fill="#fff" stroke="#65737b" strokeWidth="2" strokeLinejoin="round" />
             ))}
             {respirationPoints.map((point) => (
               <circle key={`rr-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#0f8c74" strokeWidth="2" />
