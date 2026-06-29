@@ -56,7 +56,8 @@ export const vitals = [
     shortDate: "6/25",
     slots: [
       { time: "10:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
-      { time: "21:00", temperature: 38.5, bp: "136/76", systolic: 136, diastolic: 76, pulse: 106, respiration: 24, spo2: "94%", oxygen: "NC 1L" }
+      { time: "19:20", temperature: 38.2 },
+      { time: "21:00", temperature: 37.6, bp: "136/76", systolic: 136, diastolic: 76, pulse: 96, respiration: 22, spo2: "94%", oxygen: "NC 1L" }
     ],
     meals: { morning: "0/0", noon: "2/2", evening: "2/1" }
   },
@@ -65,9 +66,9 @@ export const vitals = [
     date: "2026/06/26",
     shortDate: "6/26",
     slots: [
-      { time: "06:00", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
+      { time: "08:30", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
       { time: "12:00", temperature: 37.6, bp: "130/72", systolic: 130, diastolic: 72, pulse: 96, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
-      { time: "18:00", temperature: 37.4, bp: "128/70", systolic: 128, diastolic: 70, pulse: 94, respiration: 20, spo2: "95%", oxygen: "NC 1L" },
+      { time: "17:30", temperature: 37.4, bp: "128/70", systolic: 128, diastolic: 70, pulse: 94, respiration: 20, spo2: "95%", oxygen: "NC 1L" },
       { time: "22:00", temperature: 37.3, bp: "126/70", systolic: 126, diastolic: 70, pulse: 92, respiration: 20, spo2: "95%", oxygen: "NC 1L" }
     ],
     meals: { morning: "3/2", noon: "3/3", evening: "3/3" }
@@ -77,9 +78,9 @@ export const vitals = [
     date: "2026/06/27",
     shortDate: "6/27",
     slots: [
-      { time: "06:00", temperature: 37.2, bp: "128/72", systolic: 128, diastolic: 72, pulse: 90, respiration: 20, spo2: "95%", oxygen: "RA" },
+      { time: "09:30", temperature: 37.2, bp: "128/72", systolic: 128, diastolic: 72, pulse: 90, respiration: 20, spo2: "95%", oxygen: "RA" },
       { time: "14:00", temperature: 37.0, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
-      { time: "21:00", temperature: 37.4, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" }
+      { time: "20:30", temperature: 37.4, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" }
     ],
     meals: { morning: "4/3", noon: "4/4", evening: "4/3" }
   },
@@ -88,7 +89,7 @@ export const vitals = [
     date: "2026/06/28",
     shortDate: "6/28",
     slots: [
-      { time: "06:00", temperature: 37.1, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
+      { time: "10:00", temperature: 37.1, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
       { time: "14:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 86, respiration: 18, spo2: "96%", oxygen: "RA" },
       { time: "20:00", temperature: 36.9, bp: "124/70", systolic: 124, diastolic: 70, pulse: 86, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
@@ -99,8 +100,8 @@ export const vitals = [
     date: "2026/06/29",
     shortDate: "6/29",
     slots: [
-      { time: "06:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 84, respiration: 18, spo2: "96%", oxygen: "RA" },
-      { time: "18:00", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" }
+      { time: "10:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 84, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "17:00", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "5/5", noon: "6/5", evening: "5/5" }
   },
@@ -109,8 +110,8 @@ export const vitals = [
     date: "2026/06/30",
     shortDate: "6/30",
     slots: [
-      { time: "06:00", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
-      { time: "18:00", temperature: 36.7, bp: "122/68", systolic: 122, diastolic: 68, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
+      { time: "10:30", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "17:15", temperature: 36.7, bp: "122/68", systolic: 122, diastolic: 68, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/5" }
   },
@@ -119,8 +120,8 @@ export const vitals = [
     date: "2026/07/01",
     shortDate: "7/1",
     slots: [
-      { time: "06:00", temperature: 36.7, bp: "124/72", systolic: 124, diastolic: 72, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
-      { time: "18:00", temperature: 36.6, bp: "122/70", systolic: 122, diastolic: 70, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
+      { time: "10:00", temperature: 36.7, bp: "124/72", systolic: 124, diastolic: 72, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "16:30", temperature: 36.6, bp: "122/70", systolic: 122, diastolic: 70, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/6" }
   },
@@ -129,8 +130,8 @@ export const vitals = [
     date: "2026/07/02",
     shortDate: "7/2",
     slots: [
-      { time: "06:00", temperature: 36.6, bp: "120/68", systolic: 120, diastolic: 68, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
-      { time: "18:00", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" }
+      { time: "10:30", temperature: 36.6, bp: "120/68", systolic: 120, diastolic: 68, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "16:45", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/6", noon: "7/6", evening: "6/6" }
   },
@@ -139,9 +140,8 @@ export const vitals = [
     date: "2026/07/03",
     shortDate: "7/3",
     slots: [
-      { time: "06:00", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "95%", oxygen: "RA" },
-      { time: "18:00", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
-      { time: "22:40", temperature: 36.8, bp: "124/72", systolic: 124, diastolic: 72, pulse: 84, respiration: 18, spo2: "95%", oxygen: "RA" }
+      { time: "10:15", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "95%", oxygen: "RA" },
+      { time: "16:30", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/5" }
   },
@@ -150,8 +150,7 @@ export const vitals = [
     date: "2026/07/04",
     shortDate: "7/4",
     slots: [
-      { time: "06:00", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
-      { time: "09:00", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" }
+      { time: "09:30", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/6", noon: "7/6", evening: "6/6" }
   }

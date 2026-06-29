@@ -43,17 +43,28 @@ function trianglePoints(x: number, y: number, direction: "up" | "down") {
 }
 
 function observationText(day: VitalDay, key: "respiration" | "spo2" | "oxygen") {
-  return day.slots.map((slot) => `${slot.time} ${slot[key]}`).join(" / ");
+  return day.slots
+    .flatMap((slot) => {
+      if (key === "respiration" && "respiration" in slot) return [`${slot.time} ${slot.respiration}`];
+      if (key === "spo2" && "spo2" in slot) return [`${slot.time} ${slot.spo2}`];
+      if (key === "oxygen" && "oxygen" in slot) return [`${slot.time} ${slot.oxygen}`];
+      return [];
+    })
+    .join(" / ");
 }
 
 export function VitalChart() {
   const chartWidth = labelWidth + vitals.length * dayWidth;
   const points = allPoints();
   const tempPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.temperature, 32, 40), slot: point.slot }));
-  const pulsePoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.pulse, 0, 160), slot: point.slot }));
-  const sysPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.systolic, 0, 160), slot: point.slot }));
-  const diaPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.diastolic, 0, 160), slot: point.slot }));
-  const respirationPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.respiration, 0, 40), slot: point.slot }));
+  const pulsePoints = points
+    .flatMap((point) => ("pulse" in point.slot ? [{ x: point.x, y: yFor(point.slot.pulse, 0, 160), slot: point.slot }] : []));
+  const sysPoints = points
+    .flatMap((point) => ("systolic" in point.slot ? [{ x: point.x, y: yFor(point.slot.systolic, 0, 160), slot: point.slot }] : []));
+  const diaPoints = points
+    .flatMap((point) => ("diastolic" in point.slot ? [{ x: point.x, y: yFor(point.slot.diastolic, 0, 160), slot: point.slot }] : []));
+  const respirationPoints = points
+    .flatMap((point) => ("respiration" in point.slot ? [{ x: point.x, y: yFor(point.slot.respiration, 0, 40), slot: point.slot }] : []));
 
   const observationRows = [
     ["呼吸数", (day: VitalDay) => observationText(day, "respiration")],
