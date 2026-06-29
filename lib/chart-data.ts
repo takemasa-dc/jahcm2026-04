@@ -55,9 +55,9 @@ export const vitals = [
     date: "2026/06/25",
     shortDate: "6/25",
     slots: [
-      { time: "10:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
+      { time: "10:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "99%", oxygen: "NC 3L" },
       { time: "19:20", temperature: 38.2 },
-      { time: "21:00", temperature: 37.6, bp: "136/76", systolic: 136, diastolic: 76, pulse: 96, respiration: 22, spo2: "94%", oxygen: "NC 1L" }
+      { time: "21:00", temperature: 37.6, bp: "136/76", systolic: 136, diastolic: 76, pulse: 96, respiration: 22, spo2: "98%", oxygen: "NC 2L" }
     ],
     meals: { morning: "0/0", noon: "2/2", evening: "2/1" }
   },
@@ -66,10 +66,10 @@ export const vitals = [
     date: "2026/06/26",
     shortDate: "6/26",
     slots: [
-      { time: "08:30", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
-      { time: "12:00", temperature: 37.6, bp: "130/72", systolic: 130, diastolic: 72, pulse: 96, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
-      { time: "17:30", temperature: 37.4, bp: "128/70", systolic: 128, diastolic: 70, pulse: 94, respiration: 20, spo2: "95%", oxygen: "NC 1L" },
-      { time: "22:00", temperature: 37.3, bp: "126/70", systolic: 126, diastolic: 70, pulse: 92, respiration: 20, spo2: "95%", oxygen: "NC 1L" }
+      { time: "08:30", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "99%", oxygen: "NC 1L" },
+      { time: "12:00", temperature: 37.6, bp: "130/72", systolic: 130, diastolic: 72, pulse: 96, respiration: 22, spo2: "98%", oxygen: "NC 1L" },
+      { time: "17:30", temperature: 37.4, bp: "128/70", systolic: 128, diastolic: 70, pulse: 94, respiration: 20, spo2: "98%", oxygen: "NC 1L" },
+      { time: "22:00", temperature: 37.3, bp: "126/70", systolic: 126, diastolic: 70, pulse: 92, respiration: 20, spo2: "98%", oxygen: "NC 1L" }
     ],
     meals: { morning: "3/2", noon: "3/3", evening: "3/3" }
   },
