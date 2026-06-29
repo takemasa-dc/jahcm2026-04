@@ -754,18 +754,25 @@ dialog::backdrop {
 
 .vital-remarks {
   display: grid;
-  gap: 6px;
   border-top: 2px solid #7ea1b2;
   background: #fffdf6;
-  padding: 10px 12px;
-  font-size: 0.86rem;
+  font-size: 0.78rem;
 }
 
-.vital-remarks strong {
-  color: #6b5521;
+.vital-remark-cell {
+  min-height: 86px;
+  border-right: 2px solid #7ea1b2;
+  border-bottom: 1px solid #dce7eb;
+  padding: 7px 8px;
+  text-align: left;
+  white-space: normal;
 }
 
-.vital-remarks span {
+.vital-remark-cell p + p {
+  margin-top: 5px;
+}
+
+.vital-remark-cell span {
   font-weight: 800;
 }
 

@@ -138,13 +138,20 @@ export function VitalChart() {
             ))}
           </div>
 
-          <div className="vital-remarks">
-            <strong>看護備考</strong>
-            {nursingRemarks.map(([date, body]) => (
-              <p key={date}>
-                <span>{date}</span>　{body}
-              </p>
-            ))}
+          <div className="vital-remarks" style={{ gridTemplateColumns: `${labelWidth}px repeat(${vitals.length}, ${cellWidth * 4}px)` }}>
+            <div className="vital-row-label">看護備考</div>
+            {vitals.map((item) => {
+              const dayRemarks = nursingRemarks.filter((remark) => remark.date === item.date);
+              return (
+                <div className="vital-remark-cell" key={item.day}>
+                  {dayRemarks.map((remark) => (
+                    <p key={`${remark.time}-${remark.body}`}>
+                      <span>{remark.time}</span> {remark.body}
+                    </p>
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
