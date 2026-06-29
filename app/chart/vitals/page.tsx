@@ -1,5 +1,5 @@
-import { ChartSection, ChartShell, ChartTable } from "@/components/ChartShell";
-import { nursingRemarks, vitals, vitalsHeaders } from "@/lib/chart-data";
+import { ChartSection, ChartShell } from "@/components/ChartShell";
+import { VitalChart } from "@/components/VitalChart";
 
 export default function ChartVitalsPage() {
   return (
@@ -12,12 +12,7 @@ export default function ChartVitalsPage() {
           <span>食事摂取量＝10段階評価</span>
           <span>主/副＝主食/副食</span>
         </div>
-        <p className="hint">表は横にスクロールできます。</p>
-        <ChartTable headers={vitalsHeaders} rows={vitals} minWidth={920} />
-      </ChartSection>
-
-      <ChartSection title="看護備考">
-        <ChartTable headers={["日時", "備考"]} rows={nursingRemarks} minWidth={680} />
+        <VitalChart />
       </ChartSection>
     </ChartShell>
   );

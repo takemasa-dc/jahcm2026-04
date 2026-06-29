@@ -2,11 +2,10 @@ import Link from "next/link";
 import {
   chartNavItems,
   chartPatient,
-  patientSummary,
-  vitals,
-  vitalsHeaders
+  patientSummary
 } from "@/lib/chart-data";
-import { ChartSection, ChartShell, ChartTable, KeyValueGrid } from "@/components/ChartShell";
+import { ChartSection, ChartShell, KeyValueGrid } from "@/components/ChartShell";
+import { VitalChart } from "@/components/VitalChart";
 
 export default function ChartTopPage() {
   return (
@@ -16,8 +15,8 @@ export default function ChartTopPage() {
       </ChartSection>
 
       <ChartSection title="簡易熱型表">
-        <p className="hint">直近5日分を表示しています。全期間は熱型表ページで確認できます。</p>
-        <ChartTable headers={vitalsHeaders} rows={vitals.slice(-5)} />
+        <p className="hint">カルテ形式の概要です。全体は熱型表ページで確認できます。</p>
+        <VitalChart />
       </ChartSection>
 
       <section className="chart-link-grid" aria-label="カルテ内ページ">

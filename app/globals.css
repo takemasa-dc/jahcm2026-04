@@ -356,7 +356,7 @@ dialog::backdrop {
 }
 
 .chart-shell {
-  width: min(1180px, 100%);
+  width: min(1280px, 100%);
   margin: 0 auto;
   display: grid;
   gap: 14px;
@@ -391,6 +391,12 @@ dialog::backdrop {
   padding: 10px 12px;
   color: #50431b;
   font-weight: 700;
+}
+
+.chart-alert-blue {
+  border-color: #b8d2e3;
+  background: #eef7fb;
+  color: #24495d;
 }
 
 .patient-header {
@@ -528,6 +534,27 @@ dialog::backdrop {
   background: #f8fbfc;
 }
 
+.lab-table th[scope="row"] {
+  background: #fff;
+  color: #1d2b34;
+}
+
+.lab-value {
+  font-weight: 800;
+}
+
+.lab-high {
+  color: #bf2f2f;
+}
+
+.lab-low {
+  color: #2f65b7;
+}
+
+.lab-normal {
+  color: #1d2b34;
+}
+
 .chart-legend {
   display: flex;
   flex-wrap: wrap;
@@ -564,6 +591,11 @@ dialog::backdrop {
   color: #254c63;
 }
 
+.chart-paragraphs {
+  display: grid;
+  gap: 12px;
+}
+
 .soap-note {
   display: grid;
   gap: 12px;
@@ -581,6 +613,11 @@ dialog::backdrop {
   gap: 10px;
 }
 
+.soap-row p,
+.record-fields p {
+  white-space: pre-line;
+}
+
 .soap-row span {
   display: inline-flex;
   width: 34px;
@@ -596,6 +633,140 @@ dialog::backdrop {
 .chart-small-note {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.vital-scroll {
+  overflow-x: auto;
+  border: 1px solid #b8cbd5;
+  border-radius: 8px;
+  background: #f9fcfd;
+}
+
+.vital-chart {
+  background: #fff;
+}
+
+.vital-days,
+.vital-periods,
+.vital-row {
+  display: grid;
+}
+
+.vital-corner,
+.vital-day,
+.vital-period,
+.vital-row-label,
+.vital-day-value,
+.vital-meal-value {
+  border-right: 1px solid #c9d9df;
+  border-bottom: 1px solid #dce7eb;
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.vital-corner,
+.vital-row-label {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #e7f0f4;
+  color: #254658;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-align: left;
+}
+
+.vital-day {
+  display: grid;
+  gap: 1px;
+  border-right: 2px solid #7ea1b2;
+  background: #dfeaf0;
+  color: #203945;
+  font-size: 0.82rem;
+}
+
+.vital-day span {
+  color: #5d6d75;
+  font-size: 0.76rem;
+}
+
+.vital-period {
+  background: #f2f7f9;
+  color: #58707b;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.vital-period:nth-child(4n + 1) {
+  border-right: 2px solid #7ea1b2;
+}
+
+.temp-graph {
+  display: block;
+  background: #fbfdfe;
+  border-bottom: 1px solid #c9d9df;
+}
+
+.temp-axis {
+  fill: #607884;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.temp-label {
+  fill: #a82424;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.temp-time {
+  fill: #607884;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.vital-observations {
+  display: grid;
+}
+
+.vital-row-label {
+  min-height: 34px;
+}
+
+.vital-day-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #7ea1b2;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.vital-meal-value {
+  min-height: 34px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.vital-meal-value:nth-child(4n + 1) {
+  border-right: 2px solid #7ea1b2;
+}
+
+.vital-remarks {
+  display: grid;
+  gap: 6px;
+  border-top: 2px solid #7ea1b2;
+  background: #fffdf6;
+  padding: 10px 12px;
+  font-size: 0.86rem;
+}
+
+.vital-remarks strong {
+  color: #6b5521;
+}
+
+.vital-remarks span {
+  font-weight: 800;
 }
 
 @keyframes spin {
