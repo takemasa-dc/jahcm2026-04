@@ -47,7 +47,7 @@ export function PatientHeader() {
     ["主病名", chartPatient.diagnosis],
     ["入院理由", chartPatient.admissionReason],
     ["カンファレンス日時", chartPatient.conferenceAt],
-    ["入院日数", chartPatient.hospitalDay],
+    ["基準時点", chartPatient.hospitalDay],
     ["食事", chartPatient.diet]
   ];
 
@@ -65,7 +65,7 @@ export function PatientHeader() {
 
 export function ChartNav() {
   return (
-    <nav className="chart-nav" aria-label="架空カルテ内ナビゲーション">
+    <nav className="chart-nav" aria-label="架空カルテナビゲーション">
       <Link href="/chart">トップ</Link>
       {chartNavItems.map((item) => (
         <Link href={item.href} key={item.href}>
@@ -180,10 +180,12 @@ export function LabTable({
 
 export function SoapNote({
   title,
-  soap
+  soap,
+  orders
 }: {
   title: string;
   soap: { S: string; O: string; A: string; P: string };
+  orders?: readonly string[];
 }) {
   return (
     <article className="soap-note">
@@ -194,6 +196,16 @@ export function SoapNote({
           <p>{soap[key]}</p>
         </div>
       ))}
+      {orders ? (
+        <div className="order-card">
+          <strong>処方・指示</strong>
+          <ul>
+            {orders.map((order) => (
+              <li key={order}>{order}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </article>
   );
 }

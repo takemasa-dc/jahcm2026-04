@@ -6,7 +6,7 @@ export default function ChartDoctorNotesPage() {
     <ChartShell title="医師記録">
       <section className="record-stack">
         {doctorNotes.map((note) => (
-          <SoapNote key={note.title} title={note.title} soap={note.soap} />
+          <SoapNote key={note.title} title={note.title} soap={note.soap} orders={note.orders} />
         ))}
       </section>
     </ChartShell>

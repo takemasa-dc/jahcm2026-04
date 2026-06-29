@@ -1,9 +1,8 @@
 export const chartProgram = {
   conference: "第8回 日本在宅医療連合学会大会",
   subtitle: "チームで創る退院支援 カンファレンス・シミュレーション",
-  organizer: "企画：ななーる訪問看護デベロップメントセンター",
-  notice:
-    "このページはシミュレーション用に作成した架空のカルテです。実在の患者情報ではありません。"
+  organizer: "企画：ななーる訪問看護ディベロップメントセンター",
+  notice: "このページはシミュレーション用に作成した架空のカルテです。実在の患者情報ではありません。"
 };
 
 export const chartPatient = {
@@ -12,32 +11,31 @@ export const chartPatient = {
   department: "脳神経内科",
   conferenceAt: "2026年7月4日 13:30",
   conferenceAtShort: "2026/07/04 13:30",
-  conferencePoint: "入院10日目",
+  conferencePoint: "2026/07/04 13:30",
   admissionDate: "2026年6月25日",
-  admissionPurpose:
-    "誤嚥性肺炎の治療および退院前カンファレンスによる在宅移行方針の検討",
+  admissionDateShort: "2026/06/25",
+  admissionPurpose: "誤嚥性肺炎の治療および退院前カンファレンスによる在宅移行方針の検討",
   id: "JAHCM-2D-0004",
   name: "佐藤 由紀",
   age: "72歳",
   sex: "女性",
   diagnosis: "筋萎縮性側索硬化症（上肢型）",
   admissionReason: "誤嚥性肺炎",
-  hospitalDay: "入院10日目",
+  hospitalDay: "2026/07/04時点で入院10日目",
   diet: "きざみ食，水分とろみ",
-  currentStatus:
-    "肺炎は軽快傾向。退院前カンファレンスで在宅移行方針を検討予定。"
+  currentStatus: "現在，2026年7月4日 13:30の退院前カンファレンスで在宅移行方針を検討予定。"
 };
 
 export const conferenceNotice =
-  "本カルテは，2026年7月4日 13:30の退院前カンファレンス時点の情報です。";
+  "本カルテは2026年7月4日 13:30の退院前カンファレンス時点の情報です。";
 
 export const chartNavItems = [
-  { href: "/chart/profile", label: "基本情報", description: "患者情報，ADL・IADL，入院経緯" },
-  { href: "/chart/vitals", label: "熱型表", description: "体温グラフ，観察項目，看護備考" },
+  { href: "/chart/profile", label: "基本情報", description: "患者情報・ADL/IADL・入院までの経緯" },
+  { href: "/chart/vitals", label: "熱型表", description: "体温・脈拍・血圧・観察項目・看護備考" },
   { href: "/chart/labs", label: "検査データ", description: "日付別の採血結果と基準範囲" },
-  { href: "/chart/rehab", label: "リハ記録", description: "PT・OT・STの所見，評価，方針" },
-  { href: "/chart/nursing-notes", label: "看護記録", description: "本人・家族・院内カンファレンス" },
-  { href: "/chart/doctor-notes", label: "医師記録", description: "日付別SOAP記録" }
+  { href: "/chart/rehab", label: "リハ記録", description: "PT・OT・STの評価，所見，方針" },
+  { href: "/chart/nursing-notes", label: "看護記録", description: "本人・家族・院内カンファレンス記録" },
+  { href: "/chart/doctor-notes", label: "医師記録", description: "治療経過と処方・指示" }
 ] as const;
 
 export const patientSummary = [
@@ -52,148 +50,143 @@ export const patientSummary = [
   ["入院理由", chartPatient.admissionReason],
   ["入院日", chartPatient.admissionDate],
   ["カンファレンス日時", chartPatient.conferenceAt],
-  ["カンファレンス時点", chartPatient.conferencePoint],
-  ["現在の状態", chartPatient.currentStatus]
+  ["基準時点", chartPatient.hospitalDay],
+  ["現在の予定", chartPatient.currentStatus]
 ] as const;
 
 export const vitals = [
   {
     day: "1日目",
-    date: "6/25",
+    date: "2026/06/25",
+    shortDate: "6/25",
     slots: [
-      { time: "12:30", temperature: 38.1, bp: "140/80", systolic: 140, diastolic: 80, pulse: 106, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
-      { time: "17:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
-      null,
-      null
+      { time: "18:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
+      { time: "21:00", temperature: 38.5, bp: "136/76", systolic: 136, diastolic: 76, pulse: 106, respiration: 24, spo2: "94%", oxygen: "NC 1L" }
     ],
     meals: { morning: "0/0", noon: "2/2", evening: "2/1" }
   },
   {
     day: "2日目",
-    date: "6/26",
+    date: "2026/06/26",
+    shortDate: "6/26",
     slots: [
-      { time: "06:30", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
-      { time: "14:00", temperature: 37.6, bp: "130/72", systolic: 130, diastolic: 72, pulse: 94, respiration: 21, spo2: "95%", oxygen: "NC 1L" },
-      { time: "20:00", temperature: 37.5, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" },
-      null
+      { time: "06:00", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
+      { time: "12:00", temperature: 37.6, bp: "130/72", systolic: 130, diastolic: 72, pulse: 96, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
+      { time: "18:00", temperature: 37.4, bp: "128/70", systolic: 128, diastolic: 70, pulse: 94, respiration: 20, spo2: "95%", oxygen: "NC 1L" },
+      { time: "22:00", temperature: 37.3, bp: "126/70", systolic: 126, diastolic: 70, pulse: 92, respiration: 20, spo2: "95%", oxygen: "NC 1L" }
     ],
     meals: { morning: "3/2", noon: "3/3", evening: "3/3" }
   },
   {
     day: "3日目",
-    date: "6/27",
+    date: "2026/06/27",
+    shortDate: "6/27",
     slots: [
-      { time: "06:00", temperature: 37.4, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" },
-      null,
-      { time: "18:30", temperature: 37.2, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
-      null
+      { time: "06:00", temperature: 37.2, bp: "128/72", systolic: 128, diastolic: 72, pulse: 90, respiration: 20, spo2: "95%", oxygen: "RA" },
+      { time: "14:00", temperature: 37.0, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
+      { time: "21:00", temperature: 37.4, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" }
     ],
     meals: { morning: "4/3", noon: "4/4", evening: "4/3" }
   },
   {
     day: "4日目",
-    date: "6/28",
+    date: "2026/06/28",
+    shortDate: "6/28",
     slots: [
-      { time: "08:30", temperature: 37.1, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
-      null,
-      { time: "17:00", temperature: 37.0, bp: "124/70", systolic: 124, diastolic: 70, pulse: 86, respiration: 19, spo2: "96%", oxygen: "RA" },
-      null
+      { time: "06:00", temperature: 37.1, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
+      { time: "14:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 86, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "20:00", temperature: 36.9, bp: "124/70", systolic: 124, diastolic: 70, pulse: 86, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "5/4", noon: "5/5", evening: "5/4" }
   },
   {
     day: "5日目",
-    date: "6/29",
+    date: "2026/06/29",
+    shortDate: "6/29",
     slots: [
-      { time: "09:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 84, respiration: 18, spo2: "96%", oxygen: "RA" },
-      null,
-      { time: "17:30", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
-      null
+      { time: "06:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 84, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "18:00", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "5/5", noon: "6/5", evening: "5/5" }
   },
   {
     day: "6日目",
-    date: "6/30",
+    date: "2026/06/30",
+    shortDate: "6/30",
     slots: [
-      { time: "09:30", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
-      null,
-      null,
-      null
+      { time: "06:00", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "18:00", temperature: 36.7, bp: "122/68", systolic: 122, diastolic: 68, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/5" }
   },
   {
     day: "7日目",
-    date: "7/1",
+    date: "2026/07/01",
+    shortDate: "7/1",
     slots: [
-      { time: "08:50", temperature: 36.7, bp: "124/72", systolic: 124, diastolic: 72, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
-      null,
-      null,
-      null
+      { time: "06:00", temperature: 36.7, bp: "124/72", systolic: 124, diastolic: 72, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "18:00", temperature: 36.6, bp: "122/70", systolic: 122, diastolic: 70, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/6" }
   },
   {
     day: "8日目",
-    date: "7/2",
+    date: "2026/07/02",
+    shortDate: "7/2",
     slots: [
-      { time: "09:10", temperature: 36.6, bp: "120/68", systolic: 120, diastolic: 68, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
-      null,
-      null,
-      null
+      { time: "06:00", temperature: 36.6, bp: "120/68", systolic: 120, diastolic: 68, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "18:00", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/6", noon: "7/6", evening: "6/6" }
   },
   {
     day: "9日目",
-    date: "7/3",
+    date: "2026/07/03",
+    shortDate: "7/3",
     slots: [
-      { time: "09:20", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "95%", oxygen: "RA" },
-      null,
-      null,
-      null
+      { time: "06:00", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "95%", oxygen: "RA" },
+      { time: "18:00", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "22:40", temperature: 36.8, bp: "124/72", systolic: 124, diastolic: 72, pulse: 84, respiration: 18, spo2: "95%", oxygen: "RA" }
     ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/5" }
   },
   {
     day: "10日目",
-    date: "7/4",
+    date: "2026/07/04",
+    shortDate: "7/4",
     slots: [
-      { time: "08:40", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
-      null,
-      null,
-      null
+      { time: "06:00", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
+      { time: "09:00", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" }
     ],
     meals: { morning: "6/6", noon: "7/6", evening: "6/6" }
   }
 ] as const;
 
 export const nursingRemarks = [
-  { date: "6/25", time: "19:20", body: "38.2℃。咳嗽・喀痰あり。医師指示にて解熱鎮痛薬使用。" },
-  { date: "6/26", time: "06:40", body: "夜間，痰が絡む訴えあり。体位調整で軽快。" },
-  { date: "6/27", time: "21:10", body: "痰が絡む感じでナースコールあり。SpO2 95％。呼吸苦は軽度。" },
-  { date: "6/29", time: "12:40", body: "昼食後半に疲労感あり。食事時間40分程度。" },
-  { date: "7/1", time: "16:00", body: "長女面会あり。退院後の生活について「父と協力したい」と話される。" },
-  { date: "7/3", time: "22:40", body: "夜間，痰が絡む感じで覚醒。体位調整と飲水介助で落ち着く。" }
+  { date: "2026/06/25", time: "19:20", body: "38.2℃。咳嗽・喀痰あり。医師指示にて解熱鎮痛薬使用。" },
+  { date: "2026/06/26", time: "06:40", body: "夜間，痰が絡む訴えあり。体位調整で軽快。" },
+  { date: "2026/06/27", time: "21:10", body: "痰が絡む感じでナースコールあり。SpO2 95％。呼吸苦は軽度。" },
+  { date: "2026/06/29", time: "12:40", body: "昼食後半に疲労感あり。食事時間40分程度。" },
+  { date: "2026/07/01", time: "16:00", body: "長女面会あり。退院後の生活について「父と協力したい」と話される。" },
+  { date: "2026/07/03", time: "22:40", body: "夜間，痰が絡む感じで覚醒。体位調整と飲水介助で落ち着く。" }
 ] as const;
 
 export const labs = [
-  { item: "WBC", range: "3,300–8,600", first: "12,800", latest: "6,900", unit: "/μL", firstFlag: "high", latestFlag: "normal" },
-  { item: "Neut", range: "40–75", first: "84", latest: "68", unit: "%", firstFlag: "high", latestFlag: "normal" },
-  { item: "Hb", range: "11.6–14.8", first: "11.8", latest: "11.5", unit: "g/dL", firstFlag: "normal", latestFlag: "low" },
-  { item: "Plt", range: "15.8–34.8", first: "24.8", latest: "27.5", unit: "万/μL", firstFlag: "normal", latestFlag: "normal" },
-  { item: "CRP", range: "0.00–0.14", first: "8.6", latest: "0.9", unit: "mg/dL", firstFlag: "high", latestFlag: "high" },
-  { item: "TP", range: "6.6–8.1", first: "6.5", latest: "6.2", unit: "g/dL", firstFlag: "low", latestFlag: "low" },
-  { item: "Alb", range: "4.1–5.1", first: "3.4", latest: "3.2", unit: "g/dL", firstFlag: "low", latestFlag: "low" },
-  { item: "AST", range: "13–30", first: "24", latest: "22", unit: "U/L", firstFlag: "normal", latestFlag: "normal" },
-  { item: "ALT", range: "7–23", first: "18", latest: "17", unit: "U/L", firstFlag: "normal", latestFlag: "normal" },
-  { item: "BUN", range: "8–20", first: "18", latest: "21", unit: "mg/dL", firstFlag: "normal", latestFlag: "high" },
-  { item: "Cr", range: "0.46–0.79", first: "0.68", latest: "0.70", unit: "mg/dL", firstFlag: "normal", latestFlag: "normal" },
-  { item: "Na", range: "138–145", first: "139", latest: "140", unit: "mEq/L", firstFlag: "normal", latestFlag: "normal" },
-  { item: "K", range: "3.6–4.8", first: "4.1", latest: "4.0", unit: "mEq/L", firstFlag: "normal", latestFlag: "normal" },
-  { item: "Cl", range: "101–108", first: "103", latest: "104", unit: "mEq/L", firstFlag: "normal", latestFlag: "normal" },
-  { item: "Glu", range: "73–109", first: "118", latest: "104", unit: "mg/dL", firstFlag: "high", latestFlag: "normal" }
+  { item: "WBC", range: "3,300-8,600", first: "12,800", latest: "6,900", unit: "/μL", firstFlag: "high", latestFlag: "normal" },
+  { item: "Neut", range: "40-75", first: "84", latest: "68", unit: "%", firstFlag: "high", latestFlag: "normal" },
+  { item: "Hb", range: "11.6-14.8", first: "11.8", latest: "11.5", unit: "g/dL", firstFlag: "normal", latestFlag: "low" },
+  { item: "Plt", range: "15.8-34.8", first: "24.8", latest: "27.5", unit: "万/μL", firstFlag: "normal", latestFlag: "normal" },
+  { item: "CRP", range: "0.00-0.14", first: "8.6", latest: "0.9", unit: "mg/dL", firstFlag: "high", latestFlag: "high" },
+  { item: "TP", range: "6.6-8.1", first: "6.5", latest: "6.2", unit: "g/dL", firstFlag: "low", latestFlag: "low" },
+  { item: "Alb", range: "4.1-5.1", first: "3.4", latest: "3.2", unit: "g/dL", firstFlag: "low", latestFlag: "low" },
+  { item: "AST", range: "13-30", first: "24", latest: "22", unit: "U/L", firstFlag: "normal", latestFlag: "normal" },
+  { item: "ALT", range: "7-23", first: "18", latest: "17", unit: "U/L", firstFlag: "normal", latestFlag: "normal" },
+  { item: "BUN", range: "8-20", first: "18", latest: "21", unit: "mg/dL", firstFlag: "normal", latestFlag: "high" },
+  { item: "Cr", range: "0.46-0.79", first: "0.68", latest: "0.70", unit: "mg/dL", firstFlag: "normal", latestFlag: "normal" },
+  { item: "Na", range: "138-145", first: "139", latest: "140", unit: "mEq/L", firstFlag: "normal", latestFlag: "normal" },
+  { item: "K", range: "3.6-4.8", first: "4.1", latest: "4.0", unit: "mEq/L", firstFlag: "normal", latestFlag: "normal" },
+  { item: "Cl", range: "101-108", first: "103", latest: "104", unit: "mEq/L", firstFlag: "normal", latestFlag: "normal" },
+  { item: "Glu", range: "73-109", first: "118", latest: "104", unit: "mg/dL", firstFlag: "high", latestFlag: "normal" }
 ] as const;
 
 export const profileRows = [
@@ -271,7 +264,7 @@ export const nursingNotes = [
     soap: {
       S: "本人より「食事のときにむせることが増えていました。今日は息が苦しくなって怖かったです」と発言あり。長女より「最近，食事に時間がかかっていて，咳も増えていました。今日はかなり苦しそうだったので救急車を呼びました」と情報あり。夫は付き添い時，「家では何とかやっていました」と話す。",
       O: "救急搬送後，誤嚥性肺炎の診断で2D病棟入院。BT 38.2℃，SpO2 93％，鼻カヌラ1L。湿性咳嗽，喀痰あり。上肢筋力低下あり，ナースコール操作や飲水動作に時間を要する。発声は可能だが，疲労時に発話がやや不明瞭。夫，長女が来院し，入院時説明を受ける。",
-      A: "ALSに伴う嚥下機能低下を背景に誤嚥性肺炎を発症した可能性がある。発熱，喀痰，酸素化低下があり，呼吸状態の観察が必要。上肢機能低下により，食事，飲水，ナースコール，体位調整などで援助を要する。入院前から食事時間延長やむせが増えており，退院後の食事支援と家族の介助状況の確認が必要。\n\n看護問題：\n#1 誤嚥性肺炎に伴う呼吸状態悪化リスク\n#2 ALS進行に伴う嚥下機能・ADL低下への支援調整",
+      A: "ALSに伴う嚥下機能低下を背景に誤嚥性肺炎を発症した可能性がある。発熱，喀痰，酸素化低下があり，呼吸状態の観察が必要。上肢機能低下により，食事，飲水，ナースコール，体位調整などで援助を要する。入院前から食事時間延長やむせが増えており，退院後の食事支援と家族の介助状況の確認が必要。\n\n看護問題：\n#1 誤嚥性肺炎に伴う呼吸状態悪化リスク\n#2 ALS進行に伴う嚥下機能低下と日常生活動作への援助ニーズ",
       P: "呼吸状態，SpO2，喀痰，発熱を観察する。食事再開時は嚥下状態を確認し，ST評価につなげる。上肢機能低下に配慮し，ナースコールや飲水，体位調整を援助する。本人・夫・長女から入院前の生活状況と介助状況を継続して確認する。"
     }
   },
@@ -311,26 +304,45 @@ export const doctorNotes = [
     soap: {
       S: "夕食時に強いむせ込みがあり，その後から咳嗽，喀痰，呼吸苦が出現したとのこと。長女が救急要請。本人は「食事中にむせることが増えていた」と話す。",
       O: "BT 38.2℃，BP 138/78 mmHg，HR 104/min，RR 24/min，SpO2 93％。鼻カヌラ1Lで管理。湿性咳嗽あり。WBC 12,800/μL，Neut 84％，CRP 8.6 mg/dL。胸部所見より誤嚥性肺炎として矛盾しない。",
-      A: "ALSに伴う嚥下機能低下を背景とした誤嚥性肺炎と考える。現時点では酸素需要は軽度だが，喀痰貯留，呼吸状態の悪化に注意が必要。",
-      P: "抗菌薬治療開始。酸素投与，補液，解熱鎮痛薬を適宜使用。嚥下状態についてST評価を依頼予定。食形態は評価まで慎重に調整する。"
-    }
+      A: "ALSに伴う嚥下機能低下を背景とした誤嚥性肺炎と考える。酸素需要は軽度だが，発熱，喀痰，炎症反応上昇を認め，抗菌薬治療を要する。",
+      P: "誤嚥性肺炎に対して抗菌薬治療を開始する。酸素投与，補液，解熱鎮痛薬を適宜使用。嚥下状態についてST評価を依頼する。"
+    },
+    orders: [
+      "セフトリアキソン 2g 1日1回 点滴開始",
+      "酸素 鼻カヌラ1L，SpO2 94％以上を目安に調整",
+      "発熱時，解熱鎮痛薬使用可",
+      "嚥下評価まで食形態は病棟判断で慎重に調整"
+    ]
   },
   {
     title: "医師記録2　2026/06/29 09:30",
     soap: {
-      S: "本人は「咳は少し楽になりました。食事は時間がかかります」と話す。",
-      O: "BT 36.9℃，BP 124/68 mmHg，HR 84/min，RR 18/min，SpO2 96％，室内気。咳嗽・喀痰は軽減。WBC 7,900/μL，CRP 2.1 mg/dL。食事摂取は5〜6割程度。ST評価では，とろみ水分，きざみ食で経口摂取可能と判断。",
-      A: "誤嚥性肺炎は治療反応あり，改善傾向。嚥下機能低下は残存しており，食事時間延長と疲労がみられる。経口摂取は継続可能だが，食形態，姿勢，介助方法の調整が必要。",
-      P: "抗菌薬継続。食形態はきざみ食，水分とろみで継続。食事時のむせ，湿性咳嗽，摂取量を観察。PT・OTへADL評価を依頼。退院に向けて在宅支援体制を確認する。"
-    }
+      S: "本人は「咳は少し楽になりました。食事は時間がかかります」と話す。呼吸苦の訴えは明らかではない。",
+      O: "BT 36.9℃，BP 124/68 mmHg，HR 84/min，RR 18/min，SpO2 96％，室内気。咳嗽・喀痰は軽減。WBC 7,900/μL，CRP 2.1 mg/dL。食事摂取は5〜6割程度。ST評価では，きざみ食・とろみ水分で経口摂取可能と判断。",
+      A: "誤嚥性肺炎は抗菌薬治療に反応し改善傾向。酸素投与は不要となっており，発熱も改善している。嚥下機能低下は残存しており，食事時のむせ・湿性咳嗽には注意を要する。",
+      P: "抗菌薬は継続し，計7日間で終了予定とする。現時点では2026/07/01で終了予定。食形態はきざみ食，水分とろみで継続。食事時のむせ，湿性咳嗽，発熱再燃の有無を観察する。"
+    },
+    orders: [
+      "セフトリアキソン 2g 1日1回 点滴継続",
+      "抗菌薬は2026/07/01終了予定",
+      "酸素投与は中止，室内気で経過観察",
+      "食事はきざみ食，水分とろみ",
+      "PT・OT・ST評価継続"
+    ]
   },
   {
     title: "医師記録3　2026/07/04 09:00",
     soap: {
-      S: "本人は「家に帰ることは考えていますが，夫に負担をかけるのが心配です」と話す。家族は在宅療養に前向きと病棟より報告あり。",
-      O: "BT 36.6℃，BP 120/70 mmHg，HR 78/min，RR 18/min，SpO2 96％，室内気。WBC 6,900/μL，CRP 0.9 mg/dL，Alb 3.2 g/dL，Cr 0.70 mg/dL。発熱なし。呼吸状態は安定。食事摂取は主食6〜7割，副食6割程度。PT・OT評価では，病棟内短距離歩行は可能だが，食事・更衣では介助を要する場面あり。ST評価では，きざみ食・とろみ水分で経口摂取継続可能。",
-      A: "誤嚥性肺炎は軽快しており，医学的には退院検討可能な状態。ALSに伴う嚥下機能低下，上肢機能低下，食事疲労は残存。低栄養リスク，誤嚥再発，介助量増加には注意が必要。在宅移行には，家族の介助力，自宅環境，退院後サービス体制の確認が必要。",
-      P: "2026/07/04 13:30に退院前カンファレンスを実施し，在宅移行方針を検討する。訪問看護，ST，PT・OTの継続支援を調整する。退院後の食形態，食事介助，排痰・呼吸状態の観察，急変時対応について多職種で確認する。"
-    }
+      S: "本人は「咳はだいぶ落ち着いています」と話す。呼吸苦の訴えなし。食事は「時間はかかるが，少しずつ食べられる」と話す。",
+      O: "BT 36.6℃，BP 120/70 mmHg，HR 78/min，RR 18/min，SpO2 96％，室内気。抗菌薬は2026/07/01に終了。終了後も再発熱なし。WBC 6,900/μL，CRP 0.9 mg/dL，Alb 3.2 g/dL，Cr 0.70 mg/dL。呼吸状態は安定。ST評価では，きざみ食・とろみ水分で経口摂取継続可能。",
+      A: "誤嚥性肺炎は軽快。抗菌薬終了後も再発熱なく，酸素化も安定している。医学的には退院検討可能な状態。ALSに伴う嚥下機能低下は残存しており，誤嚥再発には注意を要する。",
+      P: "本日13:30に退院前カンファレンスを実施予定。医学的には退院検討可能であることを共有する。退院後も食形態はきざみ食，水分とろみを継続し，発熱，咳嗽増悪，喀痰増加，呼吸苦出現時には早めに医療機関へ相談する方針とする。"
+    },
+    orders: [
+      "抗菌薬は2026/07/01終了済み",
+      "食事はきざみ食，水分とろみ継続",
+      "発熱，咳嗽増悪，喀痰増加，呼吸苦出現時は医療機関へ相談",
+      "本日13:30に退院前カンファレンス予定"
+    ]
   }
 ] as const;

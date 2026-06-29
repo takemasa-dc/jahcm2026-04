@@ -591,6 +591,26 @@ dialog::backdrop {
   color: #254c63;
 }
 
+.order-card {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #d8e2e5;
+  border-radius: 8px;
+  background: #f8fbfc;
+  padding: 12px 14px;
+}
+
+.order-card strong {
+  color: #254c63;
+}
+
+.order-card ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
 .chart-paragraphs {
   display: grid;
   gap: 12px;
@@ -715,10 +735,27 @@ dialog::backdrop {
   font-weight: 900;
 }
 
+.combined-vital-graph {
+  border-bottom: 2px solid #7ea1b2;
+}
+
+.vital-legend text {
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .temp-axis {
   fill: #607884;
   font-size: 12px;
   font-weight: 800;
+}
+
+.vital-temp-scale {
+  fill: #b93535;
+}
+
+.vital-shared-scale {
+  fill: #4d5d65;
 }
 
 .temp-label {
@@ -750,6 +787,16 @@ dialog::backdrop {
   font-weight: 800;
 }
 
+.vital-observation-cell {
+  justify-content: flex-start;
+  padding: 5px 7px;
+  text-align: left;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
 .vital-meal-value {
   min-height: 34px;
   font-size: 0.82rem;
@@ -776,7 +823,7 @@ dialog::backdrop {
   justify-content: center;
   min-width: 0;
   border-right: 1px solid #dce7eb;
-  padding: 5px 4px;
+  padding: 5px 3px;
 }
 
 .vital-meal-set span:last-child {

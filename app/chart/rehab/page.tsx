@@ -3,7 +3,7 @@ import { rehabSections } from "@/lib/chart-data";
 
 export default function ChartRehabPage() {
   return (
-    <ChartShell title="リハ・ST記録">
+    <ChartShell title="リハ記録">
       {rehabSections.map((section) => (
         <ChartSection title={section.title} key={section.title}>
           <div className="record-fields">
