@@ -102,19 +102,24 @@ export default async function AdminPage() {
                       {new Date(submission.created_at).toLocaleString("ja-JP")}
                       {submission.is_hidden ? " / 非表示" : ""}
                     </p>
-                    <div style={{ maxWidth: 280, marginTop: 10 }}>
-                      <Image
-                        src={submission.image_url}
-                        alt={`グループ${submission.group_number}の提出写真`}
-                        width={560}
-                        height={420}
-                        sizes="280px"
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          borderRadius: 8
-                        }}
-                      />
+                    <div className="admin-photo-list">
+                      {[submission.image_url, submission.image_url_2]
+                        .filter((imageUrl): imageUrl is string => Boolean(imageUrl))
+                        .map((imageUrl, index) => (
+                          <Image
+                            key={imageUrl}
+                            src={imageUrl}
+                            alt={`グループ${submission.group_number}の提出写真${index + 1}`}
+                            width={560}
+                            height={420}
+                            sizes="280px"
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              borderRadius: 8
+                            }}
+                          />
+                        ))}
                     </div>
                     {submission.note ? <p>{submission.note}</p> : null}
                     <div className="admin-actions">

@@ -5,6 +5,7 @@ export type Submission = {
   id: string;
   group_number: number;
   image_url: string;
+  image_url_2: string | null;
   note: string | null;
   created_at: Date;
   updated_at: Date;
@@ -50,11 +51,16 @@ export async function ensureTables() {
       id text primary key,
       group_number integer not null check (group_number between 1 and 8),
       image_url text not null,
+      image_url_2 text,
       note text,
       created_at timestamptz not null default now(),
       updated_at timestamptz not null default now(),
       is_hidden boolean not null default false
     )
+  `;
+  await db`
+    alter table submissions
+    add column if not exists image_url_2 text
   `;
   await db`
     alter table submissions
@@ -89,13 +95,19 @@ export async function ensureTables() {
 
 export async function createSubmission(input: {
   groupNumber: number;
-  imageUrl: string;
+  imageUrls: string[];
   note: string;
 }) {
   await ensureTables();
   const rows = await sql()<Submission[]>`
-    insert into submissions (id, group_number, image_url, note)
-    values (${randomUUID()}, ${input.groupNumber}, ${input.imageUrl}, ${input.note || null})
+    insert into submissions (id, group_number, image_url, image_url_2, note)
+    values (
+      ${randomUUID()},
+      ${input.groupNumber},
+      ${input.imageUrls[0]},
+      ${input.imageUrls[1] || null},
+      ${input.note || null}
+    )
     returning *
   `;
   return rows[0];

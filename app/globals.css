@@ -105,7 +105,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 9vw, 4.4rem);
+  font-size: clamp(1.55rem, 6vw, 3rem);
   letter-spacing: 0;
 }
 
@@ -223,14 +223,13 @@ textarea {
 
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
 }
 
 .group-card {
   display: grid;
   gap: 14px;
-  padding: 16px;
+  padding: 18px;
 }
 
 .status-pill {
@@ -258,6 +257,11 @@ textarea {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.photo-strip {
+  display: grid;
+  gap: 12px;
 }
 
 .comments {
@@ -305,6 +309,13 @@ dialog::backdrop {
   padding: 16px;
 }
 
+.admin-photo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 280px));
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .admin-actions {
   display: flex;
   flex-wrap: wrap;
@@ -336,5 +347,13 @@ dialog::backdrop {
 
   .section-panel {
     padding: 28px;
+  }
+
+  .group-card {
+    padding: 24px;
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }

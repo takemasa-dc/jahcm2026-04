@@ -54,28 +54,40 @@ export async function submitWork(formData: FormData) {
     throw new Error("グループ番号を選択してください。");
   }
 
-  const image = formData.get("image");
-  if (!(image instanceof File) || image.size === 0) {
+  const images = formData
+    .getAll("images")
+    .filter((image): image is File => image instanceof File && image.size > 0);
+
+  if (images.length === 0) {
     throw new Error("成果物写真を選択してください。");
   }
+  if (images.length > 2) {
+    throw new Error("成果物写真は2枚まで選択できます。");
+  }
 
-  if (!["image/jpeg", "image/png", "image/heic", "image/heif"].includes(image.type)) {
+  const supportedImageTypes = ["image/jpeg", "image/png", "image/heic", "image/heif"];
+  if (images.some((image) => !supportedImageTypes.includes(image.type))) {
     throw new Error("JPEG，PNG，HEIC形式の画像を選択してください。");
   }
 
-  const extension = image.name.split(".").pop()?.toLowerCase() || "jpg";
-  const blob = await put(
-    `submissions/group-${groupNumber}-${Date.now()}.${extension}`,
-    image,
-    {
-      access: "public",
-      addRandomSuffix: true
-    }
+  const imageUrls = await Promise.all(
+    images.map(async (image, index) => {
+      const extension = image.name.split(".").pop()?.toLowerCase() || "jpg";
+      const blob = await put(
+        `submissions/group-${groupNumber}-${Date.now()}-${index + 1}.${extension}`,
+        image,
+        {
+          access: "public",
+          addRandomSuffix: true
+        }
+      );
+      return blob.url;
+    })
   );
 
   await createSubmission({
     groupNumber,
-    imageUrl: blob.url,
+    imageUrls,
     note: cleanText(formData.get("note"))
   });
 

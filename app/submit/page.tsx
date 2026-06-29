@@ -29,10 +29,12 @@ export default function SubmitPage() {
             </label>
             <label>
               成果物写真アップロード
+              <span className="hint">写真は2枚まで選択できます。</span>
               <input
-                name="image"
+                name="images"
                 type="file"
                 accept="image/jpeg,image/png,image/heic,image/heif"
+                multiple
                 required
               />
             </label>

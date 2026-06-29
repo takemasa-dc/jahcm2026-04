@@ -66,18 +66,25 @@ export default async function BoardPage() {
 
                 {submission ? (
                   <>
-                    <ImageDialog
-                      src={submission.image_url}
-                      alt={`グループ${groupNumber}の成果物写真`}
-                    >
-                      <Image
-                        src={submission.image_url}
-                        alt={`グループ${groupNumber}の成果物写真`}
-                        width={800}
-                        height={600}
-                        sizes="(max-width: 760px) 100vw, 33vw"
-                      />
-                    </ImageDialog>
+                    <div className="photo-strip">
+                      {[submission.image_url, submission.image_url_2]
+                        .filter((imageUrl): imageUrl is string => Boolean(imageUrl))
+                        .map((imageUrl, index) => (
+                          <ImageDialog
+                            key={imageUrl}
+                            src={imageUrl}
+                            alt={`グループ${groupNumber}の成果物写真${index + 1}`}
+                          >
+                            <Image
+                              src={imageUrl}
+                              alt={`グループ${groupNumber}の成果物写真${index + 1}`}
+                              width={960}
+                              height={720}
+                              sizes="(max-width: 760px) 100vw, 960px"
+                            />
+                          </ImageDialog>
+                        ))}
+                    </div>
                     {submission.note ? <p>{submission.note}</p> : null}
 
                     <section className="comments">
