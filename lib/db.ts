@@ -48,13 +48,22 @@ export async function ensureTables() {
   await db`
     create table if not exists submissions (
       id text primary key,
-      group_number integer not null check (group_number between 1 and 4),
+      group_number integer not null check (group_number between 1 and 8),
       image_url text not null,
       note text,
       created_at timestamptz not null default now(),
       updated_at timestamptz not null default now(),
       is_hidden boolean not null default false
     )
+  `;
+  await db`
+    alter table submissions
+    drop constraint if exists submissions_group_number_check
+  `;
+  await db`
+    alter table submissions
+    add constraint submissions_group_number_check
+    check (group_number between 1 and 8)
   `;
   await db`
     create table if not exists comments (

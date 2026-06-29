@@ -5,7 +5,7 @@ export const CONFERENCE = "第8回 日本在宅医療連合学会大会";
 export const ORGANIZER = "企画：ななーる訪問看護デベロップメントセンター";
 export const DEFAULT_VIEW_UNTIL = "2026-07-31T23:59:59+09:00";
 
-export const GROUPS = [1, 2, 3, 4] as const;
+export const GROUPS = [1, 2, 3, 4, 5, 6, 7, 8] as const;
 
 export const PROFESSIONS = [
   "医師（病院）",
