@@ -60,121 +60,111 @@ export const vitals = [
   {
     day: "1日目",
     date: "6/25",
-    temperature: 38.2,
-    time: "夕",
-    bp: "138/78",
-    pulse: "104",
-    respiration: "24",
-    spo2: "93%",
-    oxygen: "NC 1L",
+    slots: [
+      { time: "12:30", temperature: 38.1, bp: "140/80", systolic: 140, diastolic: 80, pulse: 106, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
+      { time: "17:30", temperature: 38.2, bp: "138/78", systolic: 138, diastolic: 78, pulse: 104, respiration: 24, spo2: "93%", oxygen: "NC 1L" },
+      null,
+      null
+    ],
     meals: { morning: "0/0", noon: "2/2", evening: "2/1" }
   },
   {
     day: "2日目",
     date: "6/26",
-    temperature: 37.8,
-    time: "朝",
-    bp: "132/74",
-    pulse: "98",
-    respiration: "22",
-    spo2: "94%",
-    oxygen: "NC 1L",
+    slots: [
+      { time: "06:30", temperature: 37.8, bp: "132/74", systolic: 132, diastolic: 74, pulse: 98, respiration: 22, spo2: "94%", oxygen: "NC 1L" },
+      { time: "14:00", temperature: 37.6, bp: "130/72", systolic: 130, diastolic: 72, pulse: 94, respiration: 21, spo2: "95%", oxygen: "NC 1L" },
+      { time: "20:00", temperature: 37.5, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" },
+      null
+    ],
     meals: { morning: "3/2", noon: "3/3", evening: "3/3" }
   },
   {
     day: "3日目",
     date: "6/27",
-    temperature: 37.4,
-    time: "朝",
-    bp: "128/72",
-    pulse: "92",
-    respiration: "20",
-    spo2: "95%",
-    oxygen: "RA",
+    slots: [
+      { time: "06:00", temperature: 37.4, bp: "128/72", systolic: 128, diastolic: 72, pulse: 92, respiration: 20, spo2: "95%", oxygen: "RA" },
+      null,
+      { time: "18:30", temperature: 37.2, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
+      null
+    ],
     meals: { morning: "4/3", noon: "4/4", evening: "4/3" }
   },
   {
     day: "4日目",
     date: "6/28",
-    temperature: 37.1,
-    time: "朝",
-    bp: "126/70",
-    pulse: "88",
-    respiration: "20",
-    spo2: "95%",
-    oxygen: "RA",
+    slots: [
+      { time: "08:30", temperature: 37.1, bp: "126/70", systolic: 126, diastolic: 70, pulse: 88, respiration: 20, spo2: "95%", oxygen: "RA" },
+      null,
+      { time: "17:00", temperature: 37.0, bp: "124/70", systolic: 124, diastolic: 70, pulse: 86, respiration: 19, spo2: "96%", oxygen: "RA" },
+      null
+    ],
     meals: { morning: "5/4", noon: "5/5", evening: "5/4" }
   },
   {
     day: "5日目",
     date: "6/29",
-    temperature: 36.9,
-    time: "朝",
-    bp: "124/68",
-    pulse: "84",
-    respiration: "18",
-    spo2: "96%",
-    oxygen: "RA",
+    slots: [
+      { time: "09:00", temperature: 36.9, bp: "124/68", systolic: 124, diastolic: 68, pulse: 84, respiration: 18, spo2: "96%", oxygen: "RA" },
+      null,
+      { time: "17:30", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
+      null
+    ],
     meals: { morning: "5/5", noon: "6/5", evening: "5/5" }
   },
   {
     day: "6日目",
     date: "6/30",
-    temperature: 36.8,
-    time: "朝",
-    bp: "122/70",
-    pulse: "82",
-    respiration: "18",
-    spo2: "96%",
-    oxygen: "RA",
+    slots: [
+      { time: "09:30", temperature: 36.8, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "96%", oxygen: "RA" },
+      null,
+      null,
+      null
+    ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/5" }
   },
   {
     day: "7日目",
     date: "7/1",
-    temperature: 36.7,
-    time: "朝",
-    bp: "124/72",
-    pulse: "80",
-    respiration: "18",
-    spo2: "96%",
-    oxygen: "RA",
+    slots: [
+      { time: "08:50", temperature: 36.7, bp: "124/72", systolic: 124, diastolic: 72, pulse: 80, respiration: 18, spo2: "96%", oxygen: "RA" },
+      null,
+      null,
+      null
+    ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/6" }
   },
   {
     day: "8日目",
     date: "7/2",
-    temperature: 36.6,
-    time: "朝",
-    bp: "120/68",
-    pulse: "78",
-    respiration: "18",
-    spo2: "96%",
-    oxygen: "RA",
+    slots: [
+      { time: "09:10", temperature: 36.6, bp: "120/68", systolic: 120, diastolic: 68, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
+      null,
+      null,
+      null
+    ],
     meals: { morning: "6/6", noon: "7/6", evening: "6/6" }
   },
   {
     day: "9日目",
     date: "7/3",
-    temperature: 36.7,
-    time: "朝",
-    bp: "122/70",
-    pulse: "82",
-    respiration: "18",
-    spo2: "95%",
-    oxygen: "RA",
+    slots: [
+      { time: "09:20", temperature: 36.7, bp: "122/70", systolic: 122, diastolic: 70, pulse: 82, respiration: 18, spo2: "95%", oxygen: "RA" },
+      null,
+      null,
+      null
+    ],
     meals: { morning: "6/5", noon: "6/6", evening: "6/5" }
   },
   {
     day: "10日目",
     date: "7/4",
-    temperature: 36.6,
-    time: "朝",
-    bp: "120/70",
-    pulse: "78",
-    respiration: "18",
-    spo2: "96%",
-    oxygen: "RA",
+    slots: [
+      { time: "08:40", temperature: 36.6, bp: "120/70", systolic: 120, diastolic: 70, pulse: 78, respiration: 18, spo2: "96%", oxygen: "RA" },
+      null,
+      null,
+      null
+    ],
     meals: { morning: "6/6", noon: "7/6", evening: "6/6" }
   }
 ] as const;

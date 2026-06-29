@@ -701,10 +701,18 @@ dialog::backdrop {
   border-right: 2px solid #7ea1b2;
 }
 
+.vital-graph,
 .temp-graph {
   display: block;
   background: #fbfdfe;
   border-bottom: 1px solid #c9d9df;
+}
+
+.graph-title,
+.graph-legend {
+  fill: #254658;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .temp-axis {
@@ -752,6 +760,29 @@ dialog::backdrop {
   border-right: 2px solid #7ea1b2;
 }
 
+.vital-meal-set {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 34px;
+  border-right: 2px solid #7ea1b2;
+  border-bottom: 1px solid #dce7eb;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.vital-meal-set span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  border-right: 1px solid #dce7eb;
+  padding: 5px 4px;
+}
+
+.vital-meal-set span:last-child {
+  border-right: 0;
+}
+
 .vital-remarks {
   display: grid;
   border-top: 2px solid #7ea1b2;
@@ -774,6 +805,13 @@ dialog::backdrop {
 
 .vital-remark-cell span {
   font-weight: 800;
+}
+
+.vital-footnote {
+  padding: 8px 10px;
+  background: #f8fbfc;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 @keyframes spin {
