@@ -167,6 +167,22 @@ p {
   color: #fff;
 }
 
+.button:disabled,
+.ghost-button:disabled,
+.danger-button:disabled {
+  cursor: wait;
+  opacity: 0.74;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.48);
+  border-top-color: #fff;
+  border-radius: 999px;
+  animation: spin 0.75s linear infinite;
+}
+
 .ghost-button {
   border-color: var(--line);
   background: #fff;
@@ -330,6 +346,12 @@ dialog::backdrop {
 .stack {
   display: grid;
   gap: 18px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (min-width: 760px) {

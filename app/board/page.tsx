@@ -44,6 +44,7 @@ export default async function BoardPage() {
       </main>
     );
   }
+  const submittedGroups = groups.filter(({ submission }) => Boolean(submission));
 
   return (
     <main className="page">
@@ -54,18 +55,20 @@ export default async function BoardPage() {
             <p className="eyebrow">閲覧・コメントページ</p>
             <h2>各グループの成果物</h2>
           </div>
-          <div className="board-grid">
-            {groups.map(({ groupNumber, submission, comments }) => (
-              <article className="group-card" key={groupNumber}>
-                <div>
-                  <span className="status-pill">グループ{groupNumber}</span>
-                  <h3 style={{ marginTop: 8 }}>
-                    {submission ? "提出済み" : "未提出"}
-                  </h3>
-                </div>
+          {submittedGroups.length > 0 ? (
+            <div className="board-grid">
+              {submittedGroups.map(({ groupNumber, submission, comments }) => {
+                if (!submission) {
+                  return null;
+                }
 
-                {submission ? (
-                  <>
+                return (
+                  <article className="group-card" key={groupNumber}>
+                    <div>
+                      <span className="status-pill">グループ{groupNumber}</span>
+                      <h3 style={{ marginTop: 8 }}>提出済み</h3>
+                    </div>
+
                     <div className="photo-strip">
                       {[submission.image_url, submission.image_url_2]
                         .filter((imageUrl): imageUrl is string => Boolean(imageUrl))
@@ -105,15 +108,15 @@ export default async function BoardPage() {
                       )}
                     </section>
                     <CommentForm submissionId={submission.id} />
-                  </>
-                ) : (
-                  <p className="muted">
-                    このグループの成果物はまだ提出されていません。
-                  </p>
-                )}
-              </article>
-            ))}
-          </div>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <section className="section-panel">
+              <p className="muted">まだ提出された成果物はありません。</p>
+            </section>
+          )}
         </section>
       </div>
     </main>

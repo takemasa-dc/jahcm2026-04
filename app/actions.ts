@@ -98,7 +98,7 @@ export async function submitWork(formData: FormData) {
   await createSubmission({
     groupNumber,
     imageUrls,
-    note: cleanText(formData.get("note"))
+    note: ""
   });
 
   revalidatePath("/board");
