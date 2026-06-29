@@ -46,8 +46,6 @@ export function PatientHeader() {
     ["診療科", chartPatient.department],
     ["主病名", chartPatient.diagnosis],
     ["入院理由", chartPatient.admissionReason],
-    ["カンファレンス日時", chartPatient.conferenceAt],
-    ["基準時点", chartPatient.hospitalDay],
     ["食事", chartPatient.diet]
   ];
 

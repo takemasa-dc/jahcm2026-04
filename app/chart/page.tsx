@@ -10,7 +10,7 @@ export default function ChartTopPage() {
         <KeyValueGrid rows={patientSummary} />
       </ChartSection>
 
-      <ChartSection title="簡易熱型表">
+      <ChartSection title="熱型表">
         <VitalChart />
       </ChartSection>
 
@@ -25,7 +25,7 @@ export default function ChartTopPage() {
 
       <p className="chart-alert">
         {chartPatient.hospital}・{chartPatient.ward}・{chartPatient.department}。
-        カンファレンス日時は{chartPatient.conferenceAt}です。
+        退院前カンファレンスで使用する架空カルテです。
       </p>
     </ChartShell>
   );

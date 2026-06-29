@@ -3,7 +3,7 @@ import { nursingRemarks, vitals } from "@/lib/chart-data";
 type VitalDay = (typeof vitals)[number];
 type VitalSlot = VitalDay["slots"][number];
 
-const labelWidth = 92;
+const labelWidth = 132;
 const dayWidth = 116;
 const graphHeight = 300;
 const graphTop = 28;
@@ -42,9 +42,10 @@ export function VitalChart() {
   const chartWidth = labelWidth + vitals.length * dayWidth;
   const points = allPoints();
   const tempPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.temperature, 32, 40), slot: point.slot }));
-  const pulsePoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.pulse, 0, 120), slot: point.slot }));
+  const pulsePoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.pulse, 0, 160), slot: point.slot }));
   const sysPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.systolic, 0, 160), slot: point.slot }));
   const diaPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.diastolic, 0, 160), slot: point.slot }));
+  const respirationPoints = points.map((point) => ({ x: point.x, y: yFor(point.slot.respiration, 0, 40), slot: point.slot }));
 
   const observationRows = [
     ["呼吸数", (day: VitalDay) => observationText(day, "respiration")],
@@ -67,7 +68,7 @@ export function VitalChart() {
             ))}
           </div>
 
-          <svg className="vital-graph combined-vital-graph" width={chartWidth} height={graphHeight} role="img" aria-label="体温，脈拍，血圧を重ねた熱型表グラフ">
+          <svg className="vital-graph combined-vital-graph" width={chartWidth} height={graphHeight} role="img" aria-label="体温，脈拍，血圧，呼吸数を重ねた熱型表グラフ">
             <rect x={labelWidth} y={graphTop} width={chartWidth - labelWidth} height={graphInnerHeight} fill="#f8fbfc" />
             {Array.from({ length: vitals.length + 1 }, (_, index) => {
               const x = labelWidth + index * dayWidth;
@@ -78,17 +79,26 @@ export function VitalChart() {
               return <line key={index} x1={labelWidth} x2={chartWidth} y1={y} y2={y} stroke="#d8e7ee" strokeWidth="1" />;
             })}
             <line x1={labelWidth} x2={chartWidth} y1={yFor(38, 32, 40)} y2={yFor(38, 32, 40)} stroke="#d95b5b" strokeWidth="2.2" />
+            <text x="10" y="12" className="temp-axis vital-temp-scale vital-axis-heading">BT</text>
+            <text x="46" y="12" className="temp-axis vital-shared-scale vital-axis-heading">PR/BP</text>
+            <text x="100" y="12" className="temp-axis vital-respiration-scale vital-axis-heading">RR</text>
             <text x="10" y={yFor(40, 32, 40) + 4} className="temp-axis vital-temp-scale">40℃</text>
             <text x="10" y={yFor(38, 32, 40) + 4} className="temp-axis vital-temp-scale">38℃</text>
             <text x="10" y={yFor(36, 32, 40) + 4} className="temp-axis vital-temp-scale">36℃</text>
-            <text x="58" y={yFor(120, 0, 160) + 4} className="temp-axis vital-shared-scale">120</text>
-            <text x="58" y={yFor(80, 0, 160) + 4} className="temp-axis vital-shared-scale">80</text>
-            <text x="58" y={yFor(40, 0, 160) + 4} className="temp-axis vital-shared-scale">40</text>
+            <text x="50" y={yFor(160, 0, 160) + 4} className="temp-axis vital-shared-scale">160</text>
+            <text x="50" y={yFor(120, 0, 160) + 4} className="temp-axis vital-shared-scale">120</text>
+            <text x="50" y={yFor(80, 0, 160) + 4} className="temp-axis vital-shared-scale">80</text>
+            <text x="50" y={yFor(40, 0, 160) + 4} className="temp-axis vital-shared-scale">40</text>
+            <text x="102" y={yFor(40, 0, 40) + 4} className="temp-axis vital-respiration-scale">40</text>
+            <text x="102" y={yFor(30, 0, 40) + 4} className="temp-axis vital-respiration-scale">30</text>
+            <text x="102" y={yFor(20, 0, 40) + 4} className="temp-axis vital-respiration-scale">20</text>
+            <text x="102" y={yFor(10, 0, 40) + 4} className="temp-axis vital-respiration-scale">10</text>
 
             <polyline points={polyline(tempPoints)} fill="none" stroke="#c93535" strokeWidth="2.8" />
             <polyline points={polyline(pulsePoints)} fill="none" stroke="#286fb7" strokeWidth="2.4" />
             <polyline points={polyline(sysPoints)} fill="none" stroke="#2d3438" strokeWidth="2.4" />
             <polyline points={polyline(diaPoints)} fill="none" stroke="#65737b" strokeWidth="2.4" strokeDasharray="5 4" />
+            <polyline points={polyline(respirationPoints)} fill="none" stroke="#0f8c74" strokeWidth="2.4" strokeDasharray="3 4" />
 
             {tempPoints.map((point) => (
               <circle key={`bt-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="4" fill="#fff" stroke="#c93535" strokeWidth="2" />
@@ -102,6 +112,9 @@ export function VitalChart() {
             {diaPoints.map((point) => (
               <circle key={`dia-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#65737b" strokeWidth="2" />
             ))}
+            {respirationPoints.map((point) => (
+              <circle key={`rr-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#0f8c74" strokeWidth="2" />
+            ))}
 
             {points.map((point) => (
               <text key={`time-${point.day.date}-${point.slot.time}`} x={point.x} y={graphBottom + 18} className="temp-time" textAnchor="middle">
@@ -110,9 +123,10 @@ export function VitalChart() {
             ))}
             <g className="vital-legend">
               <text x={labelWidth + 12} y="18" fill="#c93535">BT</text>
-              <text x={labelWidth + 58} y="18" fill="#286fb7">HR</text>
-              <text x={labelWidth + 106} y="18" fill="#2d3438">SYS</text>
-              <text x={labelWidth + 162} y="18" fill="#65737b">DIA</text>
+              <text x={labelWidth + 58} y="18" fill="#286fb7">PR</text>
+              <text x={labelWidth + 106} y="18" fill="#2d3438">BP-SYS</text>
+              <text x={labelWidth + 176} y="18" fill="#65737b">BP-DIA</text>
+              <text x={labelWidth + 246} y="18" fill="#0f8c74">RR</text>
             </g>
           </svg>
 

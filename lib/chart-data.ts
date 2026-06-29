@@ -21,9 +21,7 @@ export const chartPatient = {
   sex: "女性",
   diagnosis: "筋萎縮性側索硬化症（上肢型）",
   admissionReason: "誤嚥性肺炎",
-  hospitalDay: "2026/07/04時点で入院10日目",
-  diet: "きざみ食，水分とろみ",
-  currentStatus: "現在，2026年7月4日 13:30の退院前カンファレンスで在宅移行方針を検討予定。"
+  diet: "きざみ食，水分とろみ"
 };
 
 export const conferenceNotice =
@@ -48,10 +46,7 @@ export const patientSummary = [
   ["性別", chartPatient.sex],
   ["主病名", chartPatient.diagnosis],
   ["入院理由", chartPatient.admissionReason],
-  ["入院日", chartPatient.admissionDate],
-  ["カンファレンス日時", chartPatient.conferenceAt],
-  ["基準時点", chartPatient.hospitalDay],
-  ["現在の予定", chartPatient.currentStatus]
+  ["入院日", chartPatient.admissionDate]
 ] as const;
 
 export const vitals = [
@@ -199,7 +194,6 @@ export const profileRows = [
   ["主病名", chartPatient.diagnosis],
   ["入院理由", chartPatient.admissionReason],
   ["入院日", chartPatient.admissionDate],
-  ["カンファレンス日時", chartPatient.conferenceAt],
   ["同居家族", "夫，74歳"],
   ["キーパーソン", "長女，45歳，近隣在住"],
   ["住居", "築35年の戸建て，寝室は1階"]

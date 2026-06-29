@@ -8,8 +8,9 @@ export default function ChartVitalsPage() {
         <div className="chart-legend">
           <strong>凡例</strong>
           <span>BT：体温</span>
-          <span>HR：脈拍</span>
-          <span>SYS/DIA：収縮期/拡張期血圧</span>
+          <span>PR：脈拍</span>
+          <span>BP：血圧（SYS/DIA）</span>
+          <span>RR：呼吸数</span>
           <span>RA：室内気</span>
           <span>NC：鼻カヌラ</span>
           <span>食事摂取量：10段階評価，主食/副食</span>

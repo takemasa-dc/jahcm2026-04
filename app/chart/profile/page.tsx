@@ -23,10 +23,6 @@ export default function ChartProfilePage() {
           ))}
         </div>
       </ChartSection>
-
-      <ChartSection title="現在の予定">
-        <p>現在，2026年7月4日 13:30の退院前カンファレンスで在宅移行方針を検討予定。</p>
-      </ChartSection>
     </ChartShell>
   );
 }

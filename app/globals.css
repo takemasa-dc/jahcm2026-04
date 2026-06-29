@@ -758,6 +758,14 @@ dialog::backdrop {
   fill: #4d5d65;
 }
 
+.vital-respiration-scale {
+  fill: #0f7664;
+}
+
+.vital-axis-heading {
+  font-size: 10px;
+}
+
 .temp-label {
   fill: #a82424;
   font-size: 11px;
