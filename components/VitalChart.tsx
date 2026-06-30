@@ -116,7 +116,7 @@ export function VitalChart() {
             <polyline points={polyline(tempPoints)} fill="none" stroke="#c93535" strokeWidth="2.8" />
             <polyline points={polyline(pulsePoints)} fill="none" stroke="#286fb7" strokeWidth="2.4" />
             <polyline points={polyline(sysPoints)} fill="none" stroke="#2d3438" strokeWidth="2.4" />
-            <polyline points={polyline(diaPoints)} fill="none" stroke="#65737b" strokeWidth="2.4" strokeDasharray="5 4" />
+            <polyline points={polyline(diaPoints)} fill="none" stroke="#2d3438" strokeWidth="2.4" strokeDasharray="5 4" />
             <polyline points={polyline(respirationPoints)} fill="none" stroke="#0f8c74" strokeWidth="2.4" strokeDasharray="3 4" />
 
             {tempPoints.map((point) => (
@@ -129,7 +129,7 @@ export function VitalChart() {
               <polygon key={`sys-${point.slot.time}-${point.x}`} points={trianglePoints(point.x, point.y, "down")} fill="#fff" stroke="#2d3438" strokeWidth="2" strokeLinejoin="round" />
             ))}
             {diaPoints.map((point) => (
-              <polygon key={`dia-${point.slot.time}-${point.x}`} points={trianglePoints(point.x, point.y, "up")} fill="#fff" stroke="#65737b" strokeWidth="2" strokeLinejoin="round" />
+              <polygon key={`dia-${point.slot.time}-${point.x}`} points={trianglePoints(point.x, point.y, "up")} fill="#fff" stroke="#2d3438" strokeWidth="2" strokeLinejoin="round" />
             ))}
             {respirationPoints.map((point) => (
               <circle key={`rr-${point.slot.time}-${point.x}`} cx={point.x} cy={point.y} r="3.5" fill="#fff" stroke="#0f8c74" strokeWidth="2" />
@@ -144,7 +144,7 @@ export function VitalChart() {
               <text x={labelWidth + 12} y="18" fill="#c93535">BT</text>
               <text x={labelWidth + 58} y="18" fill="#286fb7">PR</text>
               <text x={labelWidth + 106} y="18" fill="#2d3438">BP-SYS</text>
-              <text x={labelWidth + 176} y="18" fill="#65737b">BP-DIA</text>
+              <text x={labelWidth + 176} y="18" fill="#2d3438">BP-DIA</text>
               <text x={labelWidth + 246} y="18" fill="#0f8c74">RR</text>
             </g>
           </svg>
