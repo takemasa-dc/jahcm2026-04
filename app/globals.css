@@ -136,9 +136,26 @@ p {
 }
 
 .site-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 20px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
+}
+
+.site-header-main {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.top-return-button {
+  min-height: 38px;
+  padding: 7px 12px;
+  white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 .actions {

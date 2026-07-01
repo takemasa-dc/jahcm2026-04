@@ -21,8 +21,8 @@ export function ChartShell({
               <span>{chartProgram.organizer}</span>
             </div>
           </div>
-          <Link className="ghost-button" href="/">
-            共有ボードへ戻る
+          <Link className="ghost-button top-return-button" href="/">
+            トップに戻る
           </Link>
         </header>
 
